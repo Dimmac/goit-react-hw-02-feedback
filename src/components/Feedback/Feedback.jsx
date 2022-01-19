@@ -4,34 +4,36 @@ import { Formik, Form, Field } from 'formik';
 // import styled from 'styled-components';
 import { Button } from './Feedback.styled';
 
-const state = {
-  good: 0,
-  neutral: 0,
-  bad: 0,
-};
-
 export class Feedback extends Component {
+  state = {
+    good: 10,
+    neutral: 20,
+    bad: 30,
+  };
+
+  handleIncrement = () => {
+    this.setState(prevState => ({ good: prevState.good + 1 }));
+  };
   render() {
     return (
       <div>
         <h2>Please, leave feedback</h2>
         <div>
-          <button
-            type="button"
-            onClick={() => {
-              console.log('Увеличить');
-            }}
-          >
+          <button type="button" onClick={this.handleIncrement}>
             Good
           </button>
-          <button type="button">Neutral</button>
-          <button type="button">Bad</button>
+          <button type="button" onClick={this.handleIncrement}>
+            Neutral
+          </button>
+          <button type="button" onClick={this.handleIncrement}>
+            Bad
+          </button>
         </div>
         <h3>Statistics</h3>
         <div>
-          <p>Good: 3</p>
-          <p>Neutral: 3</p>
-          <p>Bad: 3</p>
+          <p>Good: {this.state.good}</p>
+          <p>Neutral: {this.state.neutral}</p>
+          <p>Bad: {this.state.bad}</p>
         </div>
       </div>
     );
