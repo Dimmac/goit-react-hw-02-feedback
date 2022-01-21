@@ -10,7 +10,7 @@ export const SectionStyledApp = styled.section`
   box-shadow: 0px 1px 3px rgb(0 0 0 / 12%), 0px 1px 1px rgb(0 0 0 / 14%),
     0px 2px 1px rgb(0 0 0 / 20%);
   border-radius: 0px 0px 4px 4px;
-  background-color: greenyellow;
+  background-color: #d0f9ff73;
 `;
 
 export const Title = styled.h1`
