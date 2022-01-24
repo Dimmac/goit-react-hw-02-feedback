@@ -3,7 +3,6 @@ import { FeedbackButtonStyled } from './FeedbackOptions.styled';
 
 function FeedbackOptions(props) {
   const { options, onLeaveFeedback } = props;
-  //console.log(props);
   return options.map((option, index) => {
     return (
       <FeedbackButtonStyled
