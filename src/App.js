@@ -16,24 +16,18 @@ class Feedback extends React.Component {
       return { [position]: prevState[position] + 1 };
     });
   };
-
   countTotalFeedback = () => {
     const { good, neutral, bad } = this.state;
-
     return good + neutral + bad;
   };
-
   countPositiveFeedbackPercentage = () => {
     const { good } = this.state;
-
     return good
       ? `${Math.round((good * 100) / this.countTotalFeedback()) + '%'}`
       : `0`;
   };
-
   render() {
     const { good, neutral, bad } = this.state;
-
     return (
       <Section title="Please leave feedback">
         <SectionButtonStyled>
@@ -42,9 +36,7 @@ class Feedback extends React.Component {
             onLeaveFeedback={this.handleIncrementFeedback}
           />
         </SectionButtonStyled>
-
         <StatisticTitle>Statistics</StatisticTitle>
-
         {good === 0 && neutral === 0 && bad === 0 ? (
           <Notification message="There is no feedback" />
         ) : (
@@ -60,5 +52,4 @@ class Feedback extends React.Component {
     );
   }
 }
-
 export default Feedback;
